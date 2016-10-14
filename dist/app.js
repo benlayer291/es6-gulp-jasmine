@@ -8,21 +8,28 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var HelloWorld = function () {
-  function HelloWorld() {
-    _classCallCheck(this, HelloWorld);
+var FizzBuzz = function () {
+  function FizzBuzz() {
+    _classCallCheck(this, FizzBuzz);
   }
 
-  _createClass(HelloWorld, [{
-    key: 'hello',
-    value: function hello() {
-      var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'World';
-
-      return 'Hello, ' + name + '!';
+  _createClass(FizzBuzz, [{
+    key: 'checkNumber',
+    value: function checkNumber(number) {
+      if (number % 5 === 0 && number % 3 === 0) {
+        return 'fizzbuzz';
+      }
+      if (number % 5 === 0) {
+        return 'buzz';
+      }
+      if (number % 3 === 0) {
+        return 'fizz';
+      }
+      return number;
     }
   }]);
 
-  return HelloWorld;
+  return FizzBuzz;
 }();
 
-exports.default = HelloWorld;
+exports.default = FizzBuzz;

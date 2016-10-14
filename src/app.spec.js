@@ -1,16 +1,24 @@
 /* eslint-env jasmine */
 'use strict'
 
-import HelloWorld from './app'
+import FizzBuzz from './app'
 
-describe('Hello World', () => {
-  const helloWorld = new HelloWorld()
+describe('Fizz Buzz', () => {
+  const fizzBuzz = new FizzBuzz()
 
-  it('says hello world', () => {
-    expect(helloWorld.hello()).toEqual('Hello, World!')
+  it('returns the number', () => {
+    expect(fizzBuzz.checkNumber(8)).toEqual(8)
   })
 
-  it('says hello to Jack', () => {
-    expect(helloWorld.hello('Jack')).toEqual('Hello, Jack!')
+  it('returns fizz if divisible by 3', () => {
+    expect(fizzBuzz.checkNumber(3)).toEqual('fizz')
+  })
+
+  it('returns buzz if divisible by 5', () => {
+    expect(fizzBuzz.checkNumber(5)).toEqual('buzz')
+  })
+
+  it('returns fizzbuzz if divisible by 3 and 5', () => {
+    expect(fizzBuzz.checkNumber(15)).toEqual('fizzbuzz')
   })
 })
