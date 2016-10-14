@@ -1,12 +1,16 @@
 'use strict'
 
-class FizzBuzz {
-  checkNumber (number) {
-    if (number % 5 === 0 && number % 3 === 0) { return 'fizzbuzz' }
-    if (number % 5 === 0) { return 'buzz' }
-    if (number % 3 === 0) { return 'fizz' }
-    return number
+class ReduxTut {
+  counter (state = 0, action) {
+    switch (action.type) {
+      case 'INCREMENT':
+        return state + 1
+      case 'DECREMENT':
+        return state - 1
+      default:
+        return state
+    }
   }
 }
 
-export default FizzBuzz
+export default ReduxTut

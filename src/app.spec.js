@@ -1,24 +1,24 @@
 /* eslint-env jasmine */
 'use strict'
 
-import FizzBuzz from './app'
+import ReduxTut from './app'
 
-describe('Fizz Buzz', () => {
-  const fizzBuzz = new FizzBuzz()
+describe('Redux Counter', () => {
+  const reduxTut = new ReduxTut()
 
-  it('returns the number', () => {
-    expect(fizzBuzz.checkNumber(8)).toEqual(8)
+  it('increments the number by one', () => {
+    expect(reduxTut.counter(0, {type: 'INCREMENT'})).toEqual(1)
   })
 
-  it('returns fizz if divisible by 3', () => {
-    expect(fizzBuzz.checkNumber(3)).toEqual('fizz')
+  it('decrements the number by one', () => {
+    expect(reduxTut.counter(1, {type: 'DECREMENT'})).toEqual(0)
   })
 
-  it('returns buzz if divisible by 5', () => {
-    expect(fizzBuzz.checkNumber(5)).toEqual('buzz')
+  it('returns the unmodified state if type not recognised', () => {
+    expect(reduxTut.counter(1, {type: 'SOMETHING'})).toEqual(1)
   })
 
-  it('returns fizzbuzz if divisible by 3 and 5', () => {
-    expect(fizzBuzz.checkNumber(15)).toEqual('fizzbuzz')
+  it('returns the initial state if state undefined', () => {
+    expect(reduxTut.counter(undefined, {})).toEqual(0)
   })
 })
